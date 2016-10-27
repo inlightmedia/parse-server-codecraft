@@ -1,3 +1,7 @@
+# Dashboard CLI Command
+parse-dashboard --appId yourAppId --masterKey yourMasterKey --serverURL "https://inlightmedia-parse-server.herokuapp.com/parse"
+
+
 # parse-server-example
 
 Example project using the [parse-server](https://github.com/ParsePlatform/parse-server) module on Express.

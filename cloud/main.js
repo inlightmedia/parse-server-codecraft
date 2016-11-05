@@ -1,6 +1,6 @@
 // Functions
 require("./functions/hello");
-// require("./functions/ping");
+require("./functions/ping");
 // require("./functions/resetPlayerNotes");
 
 // Validations

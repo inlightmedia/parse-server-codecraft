@@ -17,29 +17,19 @@ Parse.Cloud.beforeSave("ChatMessage", function(request, response) {
 Parse.Cloud.afterSave("ChatMessage", function(request, response) {
   
   var contentString = request.object.get("content"); 
+  console.log(contentString + 'SEE ME!!!!!!!!!!!!!!!!');
   var wordArray = contentString.split(' ');
 
-  // for(word of wordArray) {
-    // if (word = "@bot") {
-      // Parse.Cloud.useMasterKey();
-      // var ChatMessage = Parse.Object.extend("ChatMessage");      
-      // var message = new ChatMessage();
-      // message.set("name", "bot");
-      // message.set("content", "Hia");
-      // message.save().then(function(obj) {
-      //   // console.log("Message saved!");
-      //   // response        
-      // }, function(err) {
-        
-      // });
+  for(word of wordArray) {
 
-      // message.set("name", '@bot');
-      // message.set("content", 'Hia @' + request.get("name") );        
-      // message.save().then(function success(result) {
-      //   response.success('Message from @bot sent');
-      // }, function error(e) {
-      //   console.log(e)
-      // });        
-    // }
-  // }    
+    console.log(word + 'ME TOO#########');
+    if (word = "@bot") {
+      Parse.Cloud.useMasterKey();
+      var ChatMessage = Parse.Object.extend("ChatMessage");      
+      var message = new ChatMessage();
+      message.set("name", "bot");
+      message.set("content", "Hia @" + request.get('name'));
+      message.save();
+    }
+  }    
 });

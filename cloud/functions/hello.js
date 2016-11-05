@@ -26,7 +26,8 @@ Parse.Cloud.afterSave("ChatMessage", function(request, response) {
       q.set({
         name: '@bot',
         content: 'Hia @' + request.get("name");
-      });      
+      });    
+      q.save();  
       response.success('')
     }
   }    

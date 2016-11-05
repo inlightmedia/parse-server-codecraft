@@ -21,17 +21,17 @@ Parse.Cloud.afterSave("ChatMessage", function(request, response) {
 
   // for(word of wordArray) {
     // if (word = "@bot") {
-      Parse.Cloud.useMasterKey();
-      var ChatMessage = Parse.Object.extend("ChatMessage");      
-      var message = new ChatMessage();
-      message.set("name", "bot");
-      message.set("content", "Hia");
-      message.save().then(function(obj) {
-        // console.log("Message saved!");
-        // response        
-      }, function(err) {
+      // Parse.Cloud.useMasterKey();
+      // var ChatMessage = Parse.Object.extend("ChatMessage");      
+      // var message = new ChatMessage();
+      // message.set("name", "bot");
+      // message.set("content", "Hia");
+      // message.save().then(function(obj) {
+      //   // console.log("Message saved!");
+      //   // response        
+      // }, function(err) {
         
-      });
+      // });
 
       // message.set("name", '@bot');
       // message.set("content", 'Hia @' + request.get("name") );        

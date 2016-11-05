@@ -4,8 +4,9 @@ require("./functions/hello");
 // require("./functions/resetPlayerNotes");
 
 // Validations
-require("./functions/validate");
-require("./triggers/testObject");
-require("./triggers/player");
+// ===========
+// require("./functions/validate");
+// require("./triggers/testObject");
+// require("./triggers/player");
 
 

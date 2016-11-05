@@ -22,11 +22,15 @@ Parse.Cloud.afterSave("ChatMessage", function(request, response) {
   for(word in array) {
     if (word = "@bot") {
       Parse.Cloud.useMasterKey();
-	    var q = new Parse.Query("ChatMessage");
-      q.set("name", '@bot');
-      q.set("content", 'Hia @' + request.get("name") );        
-      q.save();  
-      response.success('message from @bot sent')
+	    var ChatMessage = Parse.Object.extend("ChatMessage");
+      var message = new ChatMessage();
+      message.set("name", '@bot');
+      message.set("content", 'Hia @' + request.get("name") );        
+      message.save().then(function success(result) {
+        response.success('Message from @bot sent');
+      }, function error(e) {
+        console.log(e)
+      });        
     }
   }    
 });

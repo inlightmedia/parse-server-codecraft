@@ -17,9 +17,9 @@ Parse.Cloud.beforeSave("ChatMessage", function(request, response) {
 Parse.Cloud.afterSave("ChatMessage", function(request, response) {
   
   var contentString = request.object.get("content"); 
-  var array = contentString.split(' ');
+  var wordArray = contentString.split(' ');
 
-  for(word in array) {
+  for(word of wordArray) {
     if (word = "@bot") {
       Parse.Cloud.useMasterKey();
 	    var ChatMessage = Parse.Object.extend("ChatMessage");

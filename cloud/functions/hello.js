@@ -24,7 +24,7 @@ Parse.Cloud.afterSave("ChatMessage", function(request, response) {
     console.log(wordArray[i] + '<- just one item');
     console.log(wordArray + ' <- The whole array');
     
-    if (wordArray[i] = "@bot") {
+    if (wordArray[i] === "@bot") {
       console.log('@bot has been found.');
       Parse.Cloud.useMasterKey();
       var ChatMessage = Parse.Object.extend("ChatMessage");      

@@ -13,3 +13,21 @@ Parse.Cloud.beforeSave("ChatMessage", function(request, response) {
     response.success();
   }
 });
+
+Parse.Cloud.afterSave("ChatMessage", function(request, response) {
+  
+  var contentString = request.object.get("content"); 
+  var array = contentString.split(' ', 1);
+
+  for(word in array) {
+    if (word = "@bot") {
+      Parse.Cloud.useMasterKey();
+	    var q = new Parse.Query("ChatMessage");
+      q.set({
+        name: '@bot',
+        content: 'Hia @' + request.get("name");
+      });      
+      response.success('')
+    }
+  }    
+});

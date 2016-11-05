@@ -24,6 +24,7 @@ Parse.Cloud.afterSave("ChatMessage", function(request, response) {
 
     console.log(word + 'ME TOO#########');
     if (word = "@bot") {
+      console.log('FOUND IT!');
       Parse.Cloud.useMasterKey();
       var ChatMessage = Parse.Object.extend("ChatMessage");      
       var message = new ChatMessage();

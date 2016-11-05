@@ -20,19 +20,24 @@ Parse.Cloud.afterSave("ChatMessage", function(request, response) {
   console.log(contentString + 'AfterSave has run.');
   var wordArray = contentString.split(' ');
 
-  for(word of wordArray) {
-    console.log(wordArray);
-    console.log(word + 'This should print once for each word in the content');
-    if (word = "@bot") {
+  for (var i = 0; i < wordArray.length; i++){
+    console.log(wordArray[i] + '<- just one item');
+    console.log(wordArray + ' <- The whole array');
+    
+    if (wordArray[i] = "@bot") {
       console.log('@bot has been found.');
       Parse.Cloud.useMasterKey();
       var ChatMessage = Parse.Object.extend("ChatMessage");      
       var message = new ChatMessage();
       message.set("name", "bot");
-      message.set("content", "Hia @" + request.get('name'));
+      var greeting = 'Hia';
+      message.set("content", greeting);
       message.save().then(function success(result) {
         console.log('SAVED new ChatMessage!');
       }, function error(e) {console.log(e)});
     }
-  }    
+  }
+  
+  
+     
 });

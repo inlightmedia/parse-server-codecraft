@@ -29,12 +29,12 @@ Parse.Cloud.afterSave("ChatMessage", function(request, response) {
       var message = new ChatMessage();
       message.set("name", "bot");
       var greeting = 'Hia';
-      console.log(request.get("name"));
+      console.log(request);
       message.set("content", greeting);
       console.log('Replying from chat bot...');
       message.save().then(function success(result) {
         console.log('Chat bot reply sent.');
-      }, function error(e) {console.log(e)});
+      }, function error(e) {console.log('Could not save.')});
     }
   }
   

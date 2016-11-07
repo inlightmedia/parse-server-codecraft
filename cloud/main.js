@@ -1,5 +1,5 @@
 // Functions
-// require("./functions/hello");
+require("./functions/hello");
 require("./functions/ping");
 require("./functions/resetPlayerNotes");
 

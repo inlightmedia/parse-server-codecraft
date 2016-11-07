@@ -1,6 +1,6 @@
 # Dashboard CLI Command
 parse-dashboard --appId yourAppId --masterKey yourMasterKey --serverURL "https://inlightmedia-parse-server.herokuapp.com/parse"
-
+`heroku logs -t` shows the console.logs from the live heroku site in the terminal 
 
 # parse-server-example
 
